@@ -1,0 +1,5 @@
+https://github.com/python/python-docs-fr
+https://github.com/python/mypy
+https://github.com/python/typeshed
+https://github.com/python/python-docs-zh-cn
+https://github.com/python/cpython
