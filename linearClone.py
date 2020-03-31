@@ -25,3 +25,5 @@ def main():
         output = open("clone1/"+filename+".zip", "ab")
         output.write(request.read())
         output.close()
+
+main()
