@@ -1,4 +1,6 @@
 import urllib.request as ur
+import asyncio
+import time
 
 def readfile(filename):
     cloneURLList = []
@@ -13,13 +15,13 @@ def main():
     counter = 0
     URLList = readfile("5Sites.txt")
     for url in URLList:
+        filename = url.split("/")
+        filename = filename[4]
         counter += 1
         #download file
         request = ur.urlopen(url)
         print("made a request to " + url)
         #save
-        output = open("clone2/master"+str(counter)+".zip", "ab")
+        output = open("clone1/"+filename+".zip", "ab")
         output.write(request.read())
         output.close()
-
-main()
