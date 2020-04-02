@@ -31,7 +31,7 @@ async def run(URLList):
             task = asyncio.ensure_future(fetch(url, session))
             tasks.append(task)
             urlNames.append(url)
-            print("made a request to " + url)
+            #print("made a request to " + url)
 
 
         responses = await asyncio.gather(*tasks)
@@ -49,4 +49,9 @@ future = asyncio.ensure_future(run(URLList))
 loop.run_until_complete(future)
 
 t1= time.time()
+print("Projects downloaded: ")
+for url in URLList:
+    filename = url.split("/")
+    filename = filename[-3]
+    print(filename)
 print('Time taken %.2f seconds' % (t1-t0))
